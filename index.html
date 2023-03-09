@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation Form</title>
+</head>
+<style>
+    body{
+        background-image: url('flat-mountains.svg');
+        /* background-position: top; */
+        background-repeat: no-repeat;
+        background-size: cover;
+        
+    }
+    table{
+        background-color: rgba(255, 255, 255, 0.075);
+        /* background-image: url(); */
+        padding: 3%;
+        border-radius: 2%;
+        box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.603);
+        border: 3px solid rgba(255, 255, 255, 0.5);
+    }
+    .submit{
+        width: 50%;
+        height: 90%;
+    }
+    label{
+        color: black;
+        margin-right: 2%;
+        margin-left: -5%;
+    }
+    
+    .inputtd{
+        
+        padding: 2.5%;
+        padding-left: 5%;
+    }
+    .valuetd{
+    color: white;
+    }
+table:hover{
+    border: 3px solid white;
+    transition: all 1s;
+}
+</style>
+<style>
+        div{
+  justify-content:center;
+  align-items:center;
+  display:flex;
+  /* height:100vh; */
+  margin-top: 15%;
+}
+button{
+  border:none;
+  font-size: 20px;
+  height:50px;
+  width:180px;
+  text-transform:uppercase;
+  letter-spacing:10px;
+  background-color: #ffffff54;
+  position:relative;
+  overflow:hidden;
+  box-shadow: 1px 1px 10px black;
+  border: 1px solid rgba(255, 255, 255, 0.205);
+  font-weight: 600;
+}
+button:before{
+  content:'';
+  position:absolute;
+  top:0;
+  left:-100%;
+  width:100%;
+  height:4px;
+  background-color : white;
+  transition:all 1s;
+}
+button:after{
+  content:'';
+  position:absolute;
+  bottom:0;
+  right:-100%;
+  width:100%;
+  height:4px;
+  background-color: white;
+  transition:all 1s;
+  
+}
+button:hover:before {
+  left:0;
+}
+button:hover:after{
+  right:0;
+  
+}
+ span:before{
+  content:'';
+  position:absolute;
+  top:-100%;
+  right:0%;
+  width:4px;
+  height:100%;
+  background-color:white;
+  transition:all 1s;
+}
+button:hover span:before{
+  top:0;
+}
+span:after{
+  content:'';
+  position:absolute;
+  bottom:-100%;
+  left:0%;
+  width:4px;
+  height:100%;
+  background-color:white    ;
+  transition:all 1s;
+}
+button:hover span:after{
+  bottom:0;
+}
+button:hover{
+    font-weight: 600;
+    
+    color:white;
+    transition: all 1.7s;
+}
+
+</style>
+<body>
+    <center>
+    <form action="button.html">
+        
+        <table>
+    <tr>
+        <td class="valuetd"><label>*</label>Name :</td>
+        <td class="inputtd">
+            <input style=" box-shadow: 1px 1px 3px rgba(255, 255, 255, 0.541); padding: 1.5%; letter-spacing: 1px;" type="text"     name="" id="text" placeholder="FName" required>  
+            
+        </td>
+    </tr>
+    <tr>
+        <td class="valuetd"></td>
+        <td class="inputtd">
+            <input type="text"  style=" box-shadow: 1px 1px 3px rgba(255, 255, 255, 0.541); padding: 1.5%; letter-spacing: 1px;"   name="" id="text" placeholder="LName">
+        </td>
+    </tr>
+    <tr>
+        <td class="valuetd"><label>*</label>Email :</td>
+        <td class="inputtd">
+             
+            <input type="email" style=" box-shadow: 1px 1px 3px rgba(255, 255, 255, 0.541); padding: 1.5%; letter-spacing: 1px;" maxlength="10"  name="" id="email" placeholder="Email">
+        </td>
+    </tr>
+
+    <tr>
+        <td class="valuetd"><label>*</label>Phone No :</td>
+        <td class="inputtd">
+             
+            <input type="tel" style=" box-shadow: 1px 1px 3px rgba(255, 255, 255, 0.541); padding: 1.5%; letter-spacing: 1px;" maxlength="10"  name="" id="number" placeholder="Number"> 
+        </td>
+    </tr>
+
+    <tr>
+        <td class="valuetd"><label>*</label>Birthdate :</td>
+        <td class="inputtd">
+             
+            <input type="date"   style=" box-shadow: 1px 1px 3px rgba(255, 255, 255, 0.541); padding: 1.5%; letter-spacing: 1px;"  name="" id="Birthdate" placeholder="Birthdate">      
+        </td>
+    </tr>
+
+    <tr>
+            <td class="valuetd"><label>*</label>Appointment Time :</td>
+        <td class="inputtd">
+             
+            <input type="time"   style=" box-shadow: 1px 1px 3px rgba(255, 255, 255, 0.541); padding: 1.5%; letter-spacing: 1px;"  name="" id="Appointment time">            
+        </td>
+    </tr>
+    
+    <tr>
+        <td class="valuetd"><label>*</label>Favorite color :</td>
+        <td class="inputtd">
+             
+            <input type="color"  style=" box-shadow: 1px 1px 3px rgba(255, 255, 255, 0.541);"  name="" id="Favorite color">            
+        </td>
+    </tr>
+
+    <tr>
+        <td class="valuetd"><label>*</label>Payment Mathod :</td>
+        <td class="inputtd">
+             
+            <input type="radio"    name="" id="Payment Mathod">            
+        </td>
+    </tr>
+
+    <tr>
+        <td class="valuetd"><label>*</label>Age : </td>
+        <td class="inputtd">
+            
+            <input type="range"    name="" id="Age">           
+        </td>
+    </tr>
+
+    <tr>
+        <td class="valuetd"><label>*</label>Checkbox : </td>
+        <td class="inputtd">
+            
+            <input type="checkbox" name="" id="checkbox">            
+        </td>
+    </tr>
+
+    <tr>
+        <td class="valuetd"><label>*</label>Upload file : </td>
+        <td class="inputtd">
+            
+            <input type="file"     name="" id="file">           
+        </td>
+    </tr>
+
+    <tr>
+        <td></td>
+        <td class="submit">
+            <div><a href="index.html">
+                <button>
+                  Submit
+                  <span></span>
+                </button></a>
+              </div>
+        </td>
+    </tr>
+</table>
+
+</form>
+</center>
+</body>
+</html>
+
