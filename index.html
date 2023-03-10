@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Validation Form</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 </head>
 <style>
     body{
@@ -15,14 +16,15 @@
         
     }
     table{
-        background-color: rgba(255, 255, 255, 0.075);
+        background-color: rgba(255, 255, 255, 0.199);
         /* background-image: url(); */
         padding: 3%;
         border-radius: 2%;
-        box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.603);
+        box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.603);
         border: 3px solid rgba(255, 255, 255, 0.5);
     }
-    .submit{
+    .submittd
+    {
         width: 50%;
         height: 90%;
     }
@@ -33,27 +35,38 @@
     }
     
     .inputtd{
-        
-        padding: 2.5%;
+        padding: 2%;
         padding-left: 5%;
+        
     }
+    input{
+        background-color: rgba(0, 0, 0, 0);
+        border: 1px solid white;
+        color: white;
+        
+         }
     .valuetd{
-    color: white;
+    color: rgb(255, 255, 255);
+    font-size: 120%;
     }
 table:hover{
     border: 3px solid white;
+    box-shadow: 1px 1px 15px white;
     transition: all 1s;
+}::placeholder{
+    color: rgba(255, 255, 255, 0.815);
+    
 }
 </style>
 <style>
-        div{
+        .submitdiv{
   justify-content:center;
   align-items:center;
   display:flex;
   /* height:100vh; */
   margin-top: 15%;
 }
-button{
+.submit{
   border:none;
   font-size: 20px;
   height:50px;
@@ -64,10 +77,10 @@ button{
   position:relative;
   overflow:hidden;
   box-shadow: 1px 1px 10px black;
-  border: 1px solid rgba(255, 255, 255, 0.205);
+  border: 2px solid rgba(255, 255, 255, 0.205);
   font-weight: 600;
 }
-button:before{
+.submit:before{
   content:'';
   position:absolute;
   top:0;
@@ -77,7 +90,7 @@ button:before{
   background-color : white;
   transition:all 1s;
 }
-button:after{
+.submit:after{
   content:'';
   position:absolute;
   bottom:0;
@@ -88,14 +101,14 @@ button:after{
   transition:all 1s;
   
 }
-button:hover:before {
+.submit:hover:before {
   left:0;
 }
-button:hover:after{
+.submit:hover:after{ 
   right:0;
   
 }
- span:before{
+ .submitspan:before{
   content:'';
   position:absolute;
   top:-100%;
@@ -105,10 +118,10 @@ button:hover:after{
   background-color:white;
   transition:all 1s;
 }
-button:hover span:before{
+.submit:hover .submitspan:before{
   top:0;
 }
-span:after{
+.submit:after{
   content:'';
   position:absolute;
   bottom:-100%;
@@ -118,40 +131,137 @@ span:after{
   background-color:white    ;
   transition:all 1s;
 }
-button:hover span:after{
+.submit:hover .submitspan:after{
   bottom:0;
 }
-button:hover{
+.submit:hover{
     font-weight: 600;
-    
+    box-shadow: 1px 1px 10px white;
     color:white;
     transition: all 1.7s;
 }
 
 </style>
+
+    <style>
+    body{
+        background-image: url('flat-mountains.svg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        
+    }
+
+    .adddiv{
+  justify-content:center;
+  align-items:center;
+  display:flex;
+  height:100vh;
+  margin-top: -10%;
+}
+.addbtn{
+  border:none;
+  font-size:30px;
+ height:100px;
+  width:300px;
+  text-transform:uppercase;
+  letter-spacing:10px;
+  background-color: #ff7700;
+    position:relative;
+  overflow:hidden;
+  box-shadow: 1px 1px 10px black;
+}
+.addbtn:before{
+  content:'';
+  position:absolute;
+  top:0;
+  left:-100%;
+  width:100%;
+  height:4px;
+  background-color : rgba(255, 255, 255, 255);
+  transition:all 1s;
+}
+.addbtn:after{
+  content:'';
+  position:absolute;
+  bottom:0;
+  right:-100%;
+  width:100%;
+  height:4px;
+  background-color:rgba(255, 255, 255, 255);
+  transition:all 1s;
+  
+}
+.addbtn:hover:before {
+  left:0;
+}
+.addbtn:hover:after{
+  right:0;
+  
+}
+ .addspan:before{
+  content:'';
+  position:absolute;
+  top:-100%;
+  right:0%;
+  width:4px;
+  height:100%;
+  background-color:rgba(255, 255, 255, 255);
+  transition:all 1s;
+}
+.addbtn:hover .addspan:before{
+  top:0;
+}
+.addspan:after{
+  content:'';
+  position:absolute;
+  bottom:-100%;
+  left:0%;
+  width:4px;
+  height:100%;
+  background-color:rgba(255, 255, 255, 255);
+  transition:all 1s;
+}
+.addbtn:hover .addspan:after{
+  bottom:0;
+}
+.addbtn:hover{
+    font-weight: 600;
+    color:white;
+    transition: all 1.7s;
+    box-shadow: 1px 1px 10px white;
+    background-color: rgba(255, 255, 255, 0.164);
+}
+</style>
 <body>
+
     <center>
-    <form action="button.html">
+        <div class="adddiv">
+            <button class="addbtn">
+              Add Student
+              <span class="addspan"></span>
+            </button>
+          </div>
+        <form name="myform" class="myform">
         
         <table>
     <tr>
         <td class="valuetd"><label>*</label>Name :</td>
         <td class="inputtd">
-            <input style=" box-shadow: 1px 1px 3px rgba(255, 255, 255, 0.541); padding: 1.5%; letter-spacing: 1px;" type="text"     name="" id="text" placeholder="FName" required>  
+            <input style=" box-shadow: 1px 1px 3px rgba(255, 255, 255, 0.712); padding: 1.5%; letter-spacing: 1px; background-color: rgba(255, 255, 255, 0); border: 1px solid white;"  type="text" name="FName" id="Fname" placeholder="FName" >  
             
         </td>
     </tr>
     <tr>
         <td class="valuetd"></td>
         <td class="inputtd">
-            <input type="text"  style=" box-shadow: 1px 1px 3px rgba(255, 255, 255, 0.541); padding: 1.5%; letter-spacing: 1px;"   name="" id="text" placeholder="LName">
+            <input type="text"  style=" box-shadow: 1px 1px 3px rgba(255, 255, 255, 0.712); padding: 1.5%; letter-spacing: 1px;"   name="LName" id="text" placeholder="LName">
         </td>
     </tr>
     <tr>
         <td class="valuetd"><label>*</label>Email :</td>
         <td class="inputtd">
              
-            <input type="email" style=" box-shadow: 1px 1px 3px rgba(255, 255, 255, 0.541); padding: 1.5%; letter-spacing: 1px;" maxlength="10"  name="" id="email" placeholder="Email">
+            <input type="email" style=" box-shadow: 1px 1px 3px rgba(255, 255, 255, 0.712); padding: 1.5%; letter-spacing: 1px;" maxlength="10"  name="" id="email" placeholder="Email">
         </td>
     </tr>
 
@@ -159,7 +269,11 @@ button:hover{
         <td class="valuetd"><label>*</label>Phone No :</td>
         <td class="inputtd">
              
-            <input type="tel" style=" box-shadow: 1px 1px 3px rgba(255, 255, 255, 0.541); padding: 1.5%; letter-spacing: 1px;" maxlength="10"  name="" id="number" placeholder="Number"> 
+            <input type="number" 
+            style=" box-shadow: 1px 1px 3px rgba(255, 255, 255, 0.712); padding: 1.5%; letter-spacing: 1px;"
+             maxlength="10"  
+             name="" id="number"
+             placeholder="Number"> 
         </td>
     </tr>
 
@@ -167,7 +281,7 @@ button:hover{
         <td class="valuetd"><label>*</label>Birthdate :</td>
         <td class="inputtd">
              
-            <input type="date"   style=" box-shadow: 1px 1px 3px rgba(255, 255, 255, 0.541); padding: 1.5%; letter-spacing: 1px;"  name="" id="Birthdate" placeholder="Birthdate">      
+            <input type="date"   style=" box-shadow: 1px 1px 3px rgba(255, 255, 255, 0.712); padding: 1.5%; letter-spacing: 1px;"  name="" id="Birthdate" placeholder="Birthdate">      
         </td>
     </tr>
 
@@ -175,7 +289,7 @@ button:hover{
             <td class="valuetd"><label>*</label>Appointment Time :</td>
         <td class="inputtd">
              
-            <input type="time"   style=" box-shadow: 1px 1px 3px rgba(255, 255, 255, 0.541); padding: 1.5%; letter-spacing: 1px;"  name="" id="Appointment time">            
+            <input type="time"   style=" box-shadow: 1px 1px 3px rgba(255, 255, 255, 0.712); padding: 1.5%; letter-spacing: 1px;"  name="" id="Appointment time">            
         </td>
     </tr>
     
@@ -183,23 +297,25 @@ button:hover{
         <td class="valuetd"><label>*</label>Favorite color :</td>
         <td class="inputtd">
              
-            <input type="color"  style=" box-shadow: 1px 1px 3px rgba(255, 255, 255, 0.541);"  name="" id="Favorite color">            
+            <input type="color" value="#ffffff" style=" box-shadow: 1px 1px 3px rgba(255, 255, 255, 0.712);"  name="" id="Favorite color">            
         </td>
     </tr>
 
     <tr>
         <td class="valuetd"><label>*</label>Payment Mathod :</td>
-        <td class="inputtd">
-             
-            <input type="radio"    name="" id="Payment Mathod">            
+        <td class="inputtd" style="color: white; ">
+            <input type="radio" name="Payment Mathod" id="Payment Mathod">Cash  
+            <input type="radio" name="Payment Mathod" id="Payment Mathod">Online 
+            <input type="radio" name="Payment Mathod" id="Payment Mathod">Card           
         </td>
     </tr>
 
     <tr>
         <td class="valuetd"><label>*</label>Age : </td>
-        <td class="inputtd">
-            
+        <td class="inputtd" style="color: white;">
+            1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 100<br>
             <input type="range"    name="" id="Age">           
+        
         </td>
     </tr>
 
@@ -215,18 +331,22 @@ button:hover{
         <td class="valuetd"><label>*</label>Upload file : </td>
         <td class="inputtd">
             
-            <input type="file"     name="" id="file">           
+            <input type="file"   style="border: none;  "  name="" id="file">           
         </td>
     </tr>
-
+    <tr>
+        <td>
+            <input type="submit" id="submit" onclick="forform()">
+        </td>
+    </tr>
     <tr>
         <td></td>
-        <td class="submit">
-            <div><a href="index.html">
-                <button>
+        <td class="submittd">
+            <div class="submitdiv">
+                <button class="submit" onclick="forform()">
                   Submit
-                  <span></span>
-                </button></a>
+                  <span class="submitspan"></span>
+                </button>
               </div>
         </td>
     </tr>
@@ -234,6 +354,7 @@ button:hover{
 
 </form>
 </center>
+<script src="index.js"></script>
 </body>
 </html>
 
