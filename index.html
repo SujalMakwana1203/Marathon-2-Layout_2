@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,10 +17,12 @@
     table{
         background-color: rgba(255, 255, 255, 0.199);
         /* background-image: url(); */
-        padding: 3%;
+        padding: 2%;
+        padding-bottom: -10%;
         border-radius: 2%;
         box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.603);
         border: 3px solid rgba(255, 255, 255, 0.5);
+        margin-top: 10%;
     }
     .submittd
     {
@@ -69,8 +70,8 @@ table:hover{
 .submit{
   border:none;
   font-size: 20px;
-  height:50px;
-  width:180px;
+  height:40px;
+  width:150px;
   text-transform:uppercase;
   letter-spacing:10px;
   background-color: #ffffff54;
@@ -79,6 +80,7 @@ table:hover{
   box-shadow: 1px 1px 10px black;
   border: 2px solid rgba(255, 255, 255, 0.205);
   font-weight: 600;
+  margin-top: -5%;
 }
 .submit:before{
   content:'';
@@ -241,27 +243,37 @@ table:hover{
               <span class="addspan"></span>
             </button>
           </div>
-        <form name="myform" class="myform">
+        <form name="myform" class="myform" onsubmit="formValidation();forform();">
         
         <table>
     <tr>
         <td class="valuetd"><label>*</label>Name :</td>
         <td class="inputtd">
-            <input style=" box-shadow: 1px 1px 3px rgba(255, 255, 255, 0.712); padding: 1.5%; letter-spacing: 1px; background-color: rgba(255, 255, 255, 0); border: 1px solid white;"  type="text" name="FName" id="Fname" placeholder="FName" >  
+            <input style=" box-shadow: 1px 1px 3px rgba(255, 255, 255, 0.712); padding: 1.5%; letter-spacing: 1px; background-color: rgba(255, 255, 255, 0); border: 1px solid white;"  
+            type="text"  
+            id="Fname" 
+            placeholder="FName" 
+            required>  
             
         </td>
     </tr>
     <tr>
         <td class="valuetd"></td>
         <td class="inputtd">
-            <input type="text"  style=" box-shadow: 1px 1px 3px rgba(255, 255, 255, 0.712); padding: 1.5%; letter-spacing: 1px;"   name="LName" id="text" placeholder="LName">
+            <input type="text"  style=" box-shadow: 1px 1px 3px rgba(255, 255, 255, 0.712); padding: 1.5%; letter-spacing: 1px;"   
+            id="LName" 
+            placeholder="LName" 
+            required>
         </td>
     </tr>
     <tr>
         <td class="valuetd"><label>*</label>Email :</td>
         <td class="inputtd">
              
-            <input type="email" style=" box-shadow: 1px 1px 3px rgba(255, 255, 255, 0.712); padding: 1.5%; letter-spacing: 1px;" maxlength="10"  name="" id="email" placeholder="Email">
+            <input type="email" style=" box-shadow: 1px 1px 3px rgba(255, 255, 255, 0.712); padding: 1.5%; letter-spacing: 1px;" 
+            id="email" 
+            placeholder="Email" 
+            required>
         </td>
     </tr>
 
@@ -269,11 +281,13 @@ table:hover{
         <td class="valuetd"><label>*</label>Phone No :</td>
         <td class="inputtd">
              
-            <input type="number" 
+            <input type="tel" 
             style=" box-shadow: 1px 1px 3px rgba(255, 255, 255, 0.712); padding: 1.5%; letter-spacing: 1px;"
              maxlength="10"  
-             name="" id="number"
-             placeholder="Number"> 
+             id="number"
+             placeholder="Number"
+             onfocus="numval()"
+             > 
         </td>
     </tr>
 
@@ -281,7 +295,12 @@ table:hover{
         <td class="valuetd"><label>*</label>Birthdate :</td>
         <td class="inputtd">
              
-            <input type="date"   style=" box-shadow: 1px 1px 3px rgba(255, 255, 255, 0.712); padding: 1.5%; letter-spacing: 1px;"  name="" id="Birthdate" placeholder="Birthdate">      
+            <input type="date"   
+            style=" box-shadow: 1px 1px 3px rgba(255, 255, 255, 0.712); padding: 1.5%; letter-spacing: 1px;"   
+            id="Birthdate" 
+            placeholder="Birthdate"
+            name="birthdate" 
+            >      
         </td>
     </tr>
 
@@ -289,22 +308,23 @@ table:hover{
             <td class="valuetd"><label>*</label>Appointment Time :</td>
         <td class="inputtd">
              
-            <input type="time"   style=" box-shadow: 1px 1px 3px rgba(255, 255, 255, 0.712); padding: 1.5%; letter-spacing: 1px;"  name="" id="Appointment time">            
+            <input type="time"   style=" box-shadow: 1px 1px 3px rgba(255, 255, 255, 0.712); padding: 1.5%; letter-spacing: 1px;"
+            id="Appointment time">            
         </td>
     </tr>
     
     <tr>
         <td class="valuetd"><label>*</label>Favorite color :</td>
         <td class="inputtd">
-            
+            <input type="color" id="color">      
                 
-                <select style="background-color: rgba(255, 255, 255, 0); color: white; border: 1px solid white;" id="favcolor" name="favcolor">
+                <!-- <select style="background-color: rgba(255, 255, 255, 0); color: white; border: 1px solid white;" id="favcolor" name="favcolor">
                     <option style="color: black; " value="black">Black</option>
                     <option style="color: black; " value="white">White</option>
                     <option style="color: black; " value="red">Red</option>
                     <option style="color: black; " value="blue">Blue</option>
                     <option style="color: black; " value="green">Green</option>
-                  </select>
+                  </select> -->
         </td>
             
     </tr>
@@ -312,9 +332,9 @@ table:hover{
     <tr>
         <td class="valuetd"><label>*</label>Payment Mathod :</td>
         <td class="inputtd" style="color: white; ">
-            <input type="radio" name="Payment Mathod" id="Payment Mathod">Cash  
-            <input type="radio" name="Payment Mathod" id="Payment Mathod">Online 
-            <input type="radio" name="Payment Mathod" id="Payment Mathod">Card           
+            <input type="radio" name="Payment Mathod" value="Cash" class="Payment Mathod">Cash  
+            <input type="radio" name="Payment Mathod" value="Online" class="Payment Mathod">Online 
+            <input type="radio" name="Payment Mathod" value="Card" class="Payment Mathod">Card           
         </td>
     </tr>
 
@@ -328,26 +348,31 @@ table:hover{
     </tr>
 
     <tr>
-        <td class="valuetd"><label>*</label>Checkbox : </td>
-        <td class="inputtd">
-            
-            <input type="checkbox" name="" id="checkbox">            
-        </td>
-    </tr>
+      <td class="valuetd"><label>*</label>Upload file : </td>
+      <td class="inputtd">
+          
+          <input type="file"   style="border: none;  "  name="" id="file">           
+          </td>
+  </tr>
+
 
     <tr>
-        <td class="valuetd"><label>*</label>Upload file : </td>
-        <td class="inputtd">
+
+        
+        <td  style="margin-top: 3%; float: center; color: white;">
             
-            <input type="file"   style="border: none;  "  name="" id="file">           
+            <input type="checkbox" name="" id="checkbox" >
+            Accept Terms & Condition.            
         </td>
+        <td></td>
     </tr>
- 
+
+    
     <tr>
         <td></td>
         <td class="submittd">
             <div class="submitdiv">
-                <button class="submit" onclick="forform()">
+                <button class="submit">
                   Submit
                   <span class="submitspan"></span>
                 </button>
@@ -358,6 +383,26 @@ table:hover{
 
 </form>
 </center>
+
+<!-- user data table  -->
+<center>
+  <table border="1" style="color: white;" class="showdatda">
+    <tr>
+      <th>First Name</th> 
+      <th>Last Name</th>
+      <th>Email</th>
+      <th>Phone No</th>
+      <th>Birthdate</th>
+      <th>Appointment Time</th>
+      <th>Fav Color</th>
+      <th>Payment </th>
+      <th>Age</th>
+      <th>File</th>
+      <th>Checkbox</th>
+    </tr>
+  </table>
+</center>
+
 <script src="index.js"></script>
 </body>
 </html>
